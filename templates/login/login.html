@@ -1,0 +1,50 @@
+<main class="form-signin w-100 m-auto">
+  <div class="text-center">
+    <img src="/assets/img/escudo.png" style="opacity: 0.7" width="60%" height="60%" alt="" srcset="">
+  </div>
+
+  <form action="/login" method="post">
+    <h1 class="h5 fw-normal text-center">Sistema académico</h1>
+    <h2 class="h6 mb-2 fw-normal text-center">BTH San Julián</h2>
+    <div class="form-floating">
+      <input type="email" name="email"
+             minlength="5"
+             class="form-control" id="floatingInput" required>
+      <label for="floatingInput">Correo</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="password" minlength="3"
+             class="form-control" id="floatingPassword" required>
+      <label for="floatingPassword">Contraseña</label>
+    </div>
+    <!-- radio options role users -->
+    <div class="d-flex justify-content-evenly">
+
+      <div class="form-check form-check-inline" style="margin-right: 0px">
+        <input class="form-check-input" type="radio" name="rol" id="docente" value="Docente" checked>
+        <label class="form-check-label" for="docente">
+          Docente
+        </label>
+      </div>
+
+      <div class="form-check form-check-inline" style="margin-right: 0px">
+        <input class="form-check-input" type="radio" name="rol" id="director" value="Director">
+        <label class="form-check-label" for="director">
+          Director
+        </label>
+      </div>
+
+      <div class="form-check form-check-inline" style="margin-right: 0px">
+        <input class="form-check-input" type="radio" name="rol" id="administrativo" value="Admin">
+        <label class="form-check-label" for="administrativo">
+          Admin
+        </label>
+      </div>
+
+    </div>
+    <button class="btn btn-primary w-100 py-2 mt-3" type="submit"
+            style="background-color: #24B34C; border: #24B34C;">Ingresar
+    </button>
+    <p class="mt-3 mb-3 text-body-secondary text-center">&copy; Sistemas Informáticos 2025</p>
+  </form>
+</main>

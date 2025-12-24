@@ -1,0 +1,62 @@
+.asistencia {
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.asistencia-estudiante {
+  display: flex;
+  gap: 16px;
+}
+
+.asistencia-estado {
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+}
+
+.asistencia-horario {
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+  margin-bottom: 6px;
+}
+
+.green {
+  background-color: #e9ecef; /*#f8f9fa*/
+}
+
+input[value="P"]:checked {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+
+input[value="L"]:checked {
+  background-color: #0dcaf0 !important;
+  border-color: #0dcaf0 !important;
+}
+
+input[value="A"]:checked {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+}
+
+input[value="F"]:checked {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .asistencia {
+    display: grid;
+    grid-template-columns: 1.4fr 125px 240px 1fr;
+    min-width: 768px;
+    padding: 5px;
+    border-radius: 8px;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .asistencia-estudiante, .asistencia-horario, .asistencia-estado {
+    margin-bottom: 0px;
+  }
+}

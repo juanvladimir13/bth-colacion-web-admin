@@ -1,0 +1,48 @@
+<?php
+$unidadesEducativas = BTH\Utils\Master::getUnidadesEducativas();
+?>
+<select name="trimestre" id="trimestre" class="form-select form-select-sm mb-2">
+  <option value="1">PRIMER TRIM</option>
+  <option value="2">SEGUNDO TRIM</option>
+  <option value="3">TERCER TRIM</option>
+</select>
+
+<select name="unidad-educativa" id="unidad-educativa" class="form-select form-select-sm mb-2" required>
+  <?php foreach($unidadesEducativas as $key => $unidadEducativa): ?>
+  <option value="<?= $key ?>"><?= $unidadEducativa ?></option>
+  <?php endforeach; ?>
+</select>
+
+<select name="grado" id="grado" class="form-select form-select-sm mb-2">
+  <option value="4">CUARTO</option>
+  <option value="5">QUINTO</option>
+  <option value="6">SEXTO</option>
+</select>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-a"
+       class="link-dark link-underline-light d-block">Paralelo A</a>
+  </li>
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-b"
+       class="link-dark link-underline-light d-block">Paralelo B</a>
+  </li>
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-c"
+       class="link-dark link-underline-light d-block">Paralelo C</a>
+  </li>
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-d"
+       class="link-dark link-underline-light d-block">Paralelo D</a>
+  </li>
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-e"
+       class="link-dark link-underline-light d-block">Paralelo E</a>
+  </li>
+  <li class="list-group-item list-group-item-action px-1 py-1">
+    <a href="#" id="paralelo-todos"
+       class="link-dark link-underline-light d-block">Todos</a>
+  </li>
+</ul>
+<script src="/assets/js/sidebar-admin-curso-ue.js"></script>

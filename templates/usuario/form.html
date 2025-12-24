@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-12 col-lg-10">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="text-truncate m-0">
+        <?= $title ?>
+      </h5>
+      <div>
+        <button type="submit" form="usuario-form" class="btn btn-primary btn-sm">Guardar</button>
+      </div>
+    </div>
+    <hr class="mt-2">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <form action="/usuario" method="post" id="usuario-form">
+      <input type="text" name="id" value="<?= $usuario['id'] ?? 0 ?>" hidden="hidden">
+      <input type="text" name="nombre_old" value="<?= $usuario['nombre'] ?? '' ?>" hidden="hidden">
+      <input type="text" name="persona_id" value="<?= $usuario['persona_id'] ?? 0 ?>" hidden="hidden">
+
+      <div class="row">
+        <div class="col-12 col-md-9 col-xl-4">
+          <div class="mb-2">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" value="<?= $usuario['nombre'] ?? '' ?>" class="form-control"
+                   id="nombre" maxlength="50" required>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 col-xl-2">
+          <div class="mb-2">
+            <label for="rol" class="form-label">Rol</label>
+            <input type="text" name="rol" value="<?= $usuario['rol'] ?? '' ?>" class="form-control"
+                   id="rol" readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Actualizar datos</h6>
+        <div class="col-12 col-md-4 col-xl-4">
+          <div class="mb-2">
+            <label for="contrasenia" class="form-label">Contraseña actual</label>
+            <input type="text" name="contrasenia" class="form-control"
+                   id="contrasenia" minlength="5">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-3">
+          <div class="mb-2">
+            <label for="contrasenia-nueva" class="form-label">Nueva Contraseña</label>
+            <input type="text" name="contrasenia-nueva" class="form-control"
+                   id="contrasenia-nueva" minlength="5">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-3">
+          <div class="mb-2">
+            <label for="contrasenia-confirmada" class="form-label">Repetir Contraseña</label>
+            <input type="text" name="contrasenia-confirmada" class="form-control"
+                   id="contrasenia-confirmada" minlength="5">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<?php if (array_key_exists('error', $usuario)): ?>
+<div class="row mt-3">
+  <div class="col-12 col-lg-10">
+    <div class="alert alert-danger text-center" role="alert">
+      <?= $usuario['error'] ?>
+    </div>
+  </div>
+</div>
+<?php endif; ?>

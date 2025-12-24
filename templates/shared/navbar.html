@@ -1,0 +1,77 @@
+<?php
+  $rol = BTH\Core\Http\Controllers\CSession::getInstance()->getRol();
+?>
+<nav class="navbar navbar-expand-lg mb-3" style="background-color: #24B34C;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: white">Sistema académico</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-lg-flex justify-content-lg-between" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link dropdown-item jv-menu" href="/administrativo/plantel">Plantel</a></li>
+        <li class="nav-item"><a class="nav-link dropdown-item jv-menu" href="/estudiante/buscar">Estudiante</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle jv-menu" href="#" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            <?php if ($rol == 'Director'): ?>Director<?php endif; ?>
+
+            <?php if ($rol == 'Docente'): ?>Docente<?php endif; ?>
+
+            <?php if ($rol == 'Admin'): ?>Reportes<?php endif; ?>
+          </a>
+          <ul class="dropdown-menu">
+            <?php if ($rol != 'Director'):?>
+            <li>
+              <a class="dropdown-item" href="/administrativo/docente/curso">Cursos</a></li>
+            <li><a class="dropdown-item" href="/administrativo/docente/materia">
+              <?= $rol == 'Docente' ? 'Materias' : 'Estadisticas' ?>
+            </a></li>
+            <?php endif; ?>
+            <?php if ($rol == 'Director'):?>
+            <li><a class="dropdown-item" href="/ue">Cursos</a></li>
+            <?php endif; ?>
+            <?php if ($rol == 'Admin'):?>
+            <li><a class="dropdown-item" href="/ue/curso/centralizador">Unidades Educativas</a></li>
+            <?php endif; ?>
+          </ul>
+        </li>
+        <?php if ($rol != 'Director'):?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle jv-menu" href="#" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Tutor PPFF
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/tutor/buscar">Buscar</a></li>
+            <li><a class="dropdown-item" href="/tutor/estadisticas">Estadisticas</a></li>
+          </ul>
+        </li>
+        <?php endif; ?>
+      </ul>
+      <div class="d-lg-flex">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle jv-menu" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li class="nav-item">
+                <form action="/logout" method="post">
+                  <div class="d-grid">
+                    <button class="btn text-start" type="submit">Salir</button>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

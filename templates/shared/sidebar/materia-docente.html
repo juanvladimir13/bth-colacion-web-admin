@@ -1,0 +1,40 @@
+<?php
+$materias = BTH\Core\Http\Controllers\CSession::getInstance()->getMaterias();
+?>
+
+<div class="row ps-2 pe-2 ps-md-0 pe-md-0">
+  <?php foreach($materias as $materia): ?>
+  <div class="col-6 col-md-3 col-lg-12">
+    <div class="d-grid mb-2">
+      <button
+        class="btn btn-outline-secondary <?= $materia['materia_curso_especialidad_id'] == ($materiaCursoEspecialidadId ?? 0) ? 'active': '' ?> d-md-flex justify-content-md-center gap-1 px-md-1 align-items-center"
+        type="button" data-bs-toggle="collapse"
+        data-bs-target="#especialidad<?= $materia['materia_curso_especialidad_id'] ?>"
+        aria-expanded="false" aria-controls="collapseExample">
+        <small><?= $materia['sigla'] ?></small>
+        <strong><?= $materia['curso'] ?> <?= $materia['paralelo'] ?></strong>
+      </button>
+    </div>
+
+    <div class="collapse <?= $materia['materia_curso_especialidad_id'] == $materiaCursoEspecialidadId ? 'show': '' ?>"
+         id="especialidad<?= $materia['materia_curso_especialidad_id'] ?>">
+      <div class="card card-body border border-0 py-2">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action px-1 lh-1">
+            <a href="/asistencia/planilla/materia/<?= $materia['materia_curso_especialidad_id'] ?? 0 ?>"
+               class="link-dark link-underline-light d-block" style="font-size: small">Control de Asistencia</a>
+          </li>
+          <li class="list-group-item list-group-item-action px-1 lh-1">
+            <a href="/registro/centralizador/materia/<?= $materia['materia_curso_especialidad_id'] ?? 0 ?>"
+               class="link-dark link-underline-light d-block" style="font-size: small">Centralizador</a>
+          </li>
+          <li class="list-group-item list-group-item-action px-1">
+            <a href="/registro/curso/<?= $materia['materia_curso_especialidad_id'] ?? 0 ?>/listado"
+               class="link-dark link-underline-light d-block" style="font-size: small">Filiacion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <?php endforeach; ?>
+</div>

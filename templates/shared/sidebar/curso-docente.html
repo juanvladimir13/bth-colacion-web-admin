@@ -1,0 +1,41 @@
+<?php
+$cursos = BTH\Core\Http\Controllers\CSession::getInstance()->getCursos();
+?>
+
+<?php foreach($cursos as $curso): ?>
+<div class="d-grid mb-2">
+  <button class="btn btn-outline-secondary <?= $curso['curso_especialidad_id'] == ($cursoEspecialidadId ?? 0) ? 'active': '' ?>"
+          type="button" data-bs-toggle="collapse"
+          data-bs-target="#especialidad<?= $curso['curso_especialidad_id'] ?>"
+          aria-expanded="false" aria-controls="collapseExample" style="font-size: small">
+    <strong><?= $curso['curso'] ?> <?= $curso['paralelo'] ?></strong> <br>
+    <small><?= $curso['especialidad'] ?></small>
+  </button>
+</div>
+
+<div class="collapse <?= $curso['curso_especialidad_id'] == $cursoEspecialidadId ? 'show': '' ?>"
+     id="especialidad<?= $curso['curso_especialidad_id'] ?>">
+  <div class="card card-body border border-0 py-2">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action px-1 lh-1">
+        <a href="/asistencia/planilla/curso/<?= $curso['curso_especialidad_id'] ?? 0 ?>"
+           class="link-dark link-underline-light d-block" style="font-size: small">Control de Asistencia</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 lh-1">
+        <a href="/registro/centralizador/curso/<?= $curso['curso_especialidad_id'] ?? 0 ?>"
+           class="link-dark link-underline-light d-block" style="font-size: small">Centralizador</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1">
+        <a href="/registro/curso/<?= $curso['curso_especialidad_id'] ?? 0 ?>/filiacion"
+           class="link-dark link-underline-light d-block" style="font-size: small">Filiacion</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1">
+        <a href="#"
+           class="link-dark link-underline-light d-block" style="font-size: small">
+          Documentos
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<?php endforeach; ?>

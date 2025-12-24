@@ -1,0 +1,21 @@
+.btn-primary1 {
+    background-color: #24B34C;
+}
+
+.jv-menu-active {
+    background-color: #bdf5cc;
+    color: #062d13;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.jv-menu {
+    color: white;
+}
+
+.jv-menu:hover {
+    background-color: #bdf5cc;
+    color: #062d13;
+    border-radius: 8px;
+    font-weight: 500;
+}

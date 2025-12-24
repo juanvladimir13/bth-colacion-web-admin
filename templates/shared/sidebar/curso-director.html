@@ -1,0 +1,145 @@
+<select name="trimestre" id="trimestre" class="form-select form-select-sm mb-3">
+  <option value="1"
+  <?= $trimestre == 1 ? 'selected': '' ?>>PRIMER TRIM</option>
+  <option value="2"
+  <?= $trimestre == 2 ? 'selected': '' ?>>SEGUNDO TRIM</option>
+  <option value="3"
+  <?= $trimestre == 3 ? 'selected': '' ?>>TERCER TRIM</option>
+</select>
+
+<div class="d-grid mb-2">
+  <button class="btn btn-outline-secondary <?= ($grado ?? '')==4 ? 'active': '' ?>" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ue-grado-4"
+
+          aria-expanded="false" aria-controls="collapseExample">
+    <strong>CUARTO</strong>
+  </button>
+</div>
+
+
+<div class="collapse <?= ($grado ?? '')==4 ? 'show': '' ?>" id="ue-grado-4">
+  <div class="card card-body border border-0 py-2">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/A/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo A</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/B/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo B</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/C/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo C</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/D/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo D</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/E/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo E</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/4/paralelo/TODOS/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Todos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="d-grid mb-2">
+  <button class="btn btn-outline-secondary <?= ($grado ?? '')==5 ? 'active': '' ?>" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ue-grado-5"
+
+          aria-expanded="false" aria-controls="collapseExample">
+    <strong>QUINTO</strong>
+  </button>
+</div>
+
+<div class="collapse <?= ($grado ?? '')==5 ? 'show': '' ?>" id="ue-grado-5">
+  <div class="card card-body border border-0 py-2">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/A/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo A</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/B/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo B</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/C/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo C</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/D/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo D</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/E/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo E</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/5/paralelo/TODOS/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Todos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="d-grid mb-2">
+  <button class="btn btn-outline-secondary <?= ($grado ?? '')==6 ? 'active': '' ?>" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ue-grado-6"
+
+          aria-expanded="false" aria-controls="collapseExample">
+    <strong>SEXTO</strong>
+  </button>
+</div>
+
+<div class="collapse <?= ($grado ?? '')==6 ? 'show': '' ?>" id="ue-grado-6">
+  <div class="card card-body border border-0 py-2">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/A/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo A</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/B/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo B</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/C/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo C</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/D/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo D</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/E/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Paralelo E</a>
+      </li>
+      <li class="list-group-item list-group-item-action px-1 py-1">
+        <a href="/ue/<?=$unidadEducativaId?>/grado/6/paralelo/TODOS/<?= $trimestre ?? 1 ?>"
+           class="link-dark link-underline-light d-block">Todos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $trimestreSelect = document.getElementById('trimestre');
+    $trimestreSelect.addEventListener('change', (event) => {
+      const selectedTrimestre = event.target.value;
+      const $anchorTags = document.querySelectorAll('a');
+      $anchorTags.forEach(anchor => {
+        anchor.href = anchor.href.replace(/\/(\d+)$/, `/${selectedTrimestre}`);
+      });
+    });
+  })
+</script>
